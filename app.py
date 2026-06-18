@@ -9,7 +9,7 @@ pl = st.slider("Petal length", 1.0, 7.0, 1.4)
 pw = st.slider("Petal width",  0.1, 2.5, 0.2)
  
 if st.button("Predict"):
-    res = requests.post("http://127.0.0.1:8000/predict",
+    res = requests.post("https://iris-api-vj48.onrender.com/predict",
         json={"sepal_length": sl, "sepal_width": sw,
               "petal_length": pl, "petal_width": pw})
     st.success(f"Prediction: {res.json()['prediction']}")
